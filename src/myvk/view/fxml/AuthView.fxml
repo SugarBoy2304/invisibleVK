@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="anchor-backgorund" stylesheets="@../css/PullStryle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myvk.view.controllers.AuthController">
+   <children>
+      <Pane layoutX="540.0" layoutY="-1.0" prefHeight="720.0" prefWidth="800.0" styleClass="anchor-div" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <AnchorPane accessibleRole="LIST_VIEW" layoutX="165.0" layoutY="544.0" maxHeight="90.0" maxWidth="150.0" minHeight="90.0" minWidth="150.0" prefHeight="90.0" prefWidth="150.0">
+               <children>
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleButtonLogin" onMouseEntered="#handleOnLoginButtonAction" onMouseExited="#handleOffLoginButtonAction" prefHeight="35.0" prefWidth="150.0" styleClass="button-default" stylesheets="@../css/PullStryle.css" text="Авторизация" />
+                  <Button fx:id="regButton" layoutY="53.0" mnemonicParsing="false" onAction="#handleButtonReg" onMouseEntered="#handleOnRegButtonAction" onMouseExited="#handleOffRegButtonAction" prefHeight="35.0" prefWidth="150.0" styleClass="button-default" stylesheets="@../css/PullStryle.css" text="Регистрация" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+            <ImageView fitHeight="414.0" fitWidth="377.0" layoutX="52.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+
+
+.anchor-backgorund {
+    -fx-background-color: #ffffff;
+}
+
+.anchor-div {
+    -fx-background-color: #527ac2;
+    -fx-background-radius: 0 0 5 0;
+}
+
+.button-change:hover {
+    -fx-color: #ffffff;
+}
+
+.button-default {
+    -fx-background-color: rgb(64,199,129);
+    -fx-effect: dropshadow(gaussian, rgb(53,167,110),0,7,0,5);
+    -fx-font-weight: 700;
+    -fx-color: white;
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 3 3 3 3;
+    -fx-cursor: hand;
+}
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+
+}
+
+.avatar {
+    -fx-padding: 20px;
+    -fx-border-radius: 0 0 5 0;
+}

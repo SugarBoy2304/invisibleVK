@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="320.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myvk.view.controllers.CopyControllers">
+   <children>
+      <ImageView fx:id="img" fitHeight="200.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ButtonBar layoutX="14.0" layoutY="277.0" prefHeight="40.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="113.0" text="Копировать" />
+            <Button mnemonicParsing="false" onAction="#skipItem" text="Пропустить" />
+            <Button maxWidth="160.0" mnemonicParsing="false" onAction="#addAll" prefHeight="25.0" prefWidth="160.0" text="Copy All" />
+        </buttons>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ButtonBar>
+      <GridPane layoutX="14.0" layoutY="224.0" prefHeight="53.0" prefWidth="290.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="57.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="243.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Название" />
+            <Label text="Цена" GridPane.rowIndex="1" />
+            <TextField fx:id="name" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="price" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+      <Label layoutX="15.0" layoutY="206.0" text="Статус:" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="10.0" />
+      <Label fx:id="status" layoutX="61.0" layoutY="206.0" text="Label" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="60.0" />
+   </children>
+</AnchorPane>
