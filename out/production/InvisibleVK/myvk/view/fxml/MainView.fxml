@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -17,20 +20,14 @@
 
 <AnchorPane maxHeight="720.0" maxWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myvk.view.controllers.MainControllers">
    <children>
-      <AnchorPane layoutX="1057.0" layoutY="627.0" minHeight="-Infinity" prefHeight="65.0" prefWidth="150.0" styleClass="anchor-div" stylesheets="@../css/DarkTheme.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
-         <children>
-            <Button layoutX="106.0" layoutY="40.0" mnemonicParsing="false" onAction="#quitUser" styleClass="button-my" text="Выйти" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-            <Label fx:id="exit_name" alignment="CENTER" contentDisplay="RIGHT" layoutX="14.0" layoutY="14.0" styleClass="label-bright" stylesheets="@../css/DarkTheme.css" text="\$User name" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="30.0" prefWidth="1280.0" styleClass="anchor-menu" stylesheets="@../css/DarkTheme.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="30.0" prefWidth="1280.0" styleClass="anchor-menu" stylesheets="@../css/DarkTheme.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="560.0" AnchorPane.topAnchor="25.0">
          <children>
             <Label layoutX="8.0" layoutY="4.0" styleClass="label-bright" text="Ссылка:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
             <TextField fx:id="url" layoutX="70.0" layoutY="5.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0" promptText="url" styleClass="text-field" stylesheets="@../css/DarkTheme.css" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="5.0" />
             <Button fx:id="startFind" layoutX="287.0" layoutY="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#startFind" prefHeight="20.0" styleClass="button-mini" text="Загрузить" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
          </children>
       </AnchorPane>
-      <TableView fx:id="tableItems" layoutY="515.0" maxHeight="690.0" prefHeight="690.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <TableView fx:id="tableItems" layoutY="515.0" maxHeight="690.0" prefHeight="690.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="55.0">
         <columns>
           <TableColumn fx:id="id_column" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="#" />
           <TableColumn fx:id="item_column" maxWidth="595.0" minWidth="595.0" prefWidth="595.0" text="Товар" />
@@ -38,7 +35,7 @@
             <TableColumn fx:id="isAddItem_column" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="720.0" layoutY="30.0" maxHeight="400.0" maxWidth="560.0" prefHeight="391.0" prefWidth="560.0" styleClass="anchor-div2" stylesheets="@../css/DarkTheme.css">
+      <AnchorPane layoutX="720.0" layoutY="30.0" maxHeight="400.0" maxWidth="560.0" prefHeight="391.0" prefWidth="560.0" styleClass="anchor-div2" stylesheets="@../css/DarkTheme.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <children>
             <HBox fx:id="item_pics" layoutX="92.0" layoutY="10.0" prefHeight="75.0" prefWidth="200.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="10.0" />
             <GridPane layoutX="180.0" layoutY="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
@@ -122,7 +119,7 @@
             <Button layoutX="422.0" layoutY="37.0" mnemonicParsing="false" onAction="#saveEditItem" prefHeight="30.0" prefWidth="130.0" styleClass="button-mini" text="Сохранить " AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="727.0" layoutY="663.0" mnemonicParsing="false" onAction="#startCloneProcess" prefHeight="39.0" prefWidth="391.0" stylesheets="@../css/DarkTheme.css" text="Копировать" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="162.0" />
+      <Button layoutX="727.0" layoutY="663.0" mnemonicParsing="false" onAction="#startCloneProcess" prefHeight="39.0" prefWidth="528.0" stylesheets="@../css/DarkTheme.css" text="Копировать" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="730.0" AnchorPane.rightAnchor="10.0" />
       <GridPane layoutX="739.0" layoutY="460.0" prefHeight="65.0" prefWidth="207.0">
         <columnConstraints>
           <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="62.0" />
@@ -149,5 +146,19 @@
          </children>
       </GridPane>
       <Label layoutX="839.0" layoutY="432.0" prefWidth="218.0" text="Информация о вашей группе" />
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="VK">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSpammer" text="Открыть Spammer" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Аккаунт">
+              <items>
+              <MenuItem fx:id="exit_name" mnemonicParsing="false" text="Аккаунт: " />
+                  <MenuItem mnemonicParsing="false" onAction="#quitUser" text="Выйти" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

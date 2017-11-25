@@ -19,11 +19,11 @@ public class Browser extends Region {
     final WebView browser = new WebView();
     final WebEngine webEngine = browser.getEngine();
 
-    public Browser(PullUp pullUp) {
+    public Browser(Main pullUp) {
         this(pullUp, Move.DEFAULT);
     }
 
-    public Browser(PullUp pullUp, Move move) {
+    public Browser(Main pullUp, Move move) {
         //apply the styles
         getStyleClass().add("browser");
         // load the web page
@@ -38,7 +38,7 @@ public class Browser extends Region {
                 LoginScreen.closeBrowser();
 
                 try {
-                    PullUp.getApp().initUser();
+                    Main.getApp().initUser();
                 } catch (ApiAuthException e) {
                     e.printStackTrace();
                 }

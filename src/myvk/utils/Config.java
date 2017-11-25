@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public class Config {
 
@@ -21,6 +22,10 @@ public class Config {
     private String last_url;
     private String last_club;
     private String last_almub;
+
+    private List<String> spammer_accounts;
+    private List<String> spammer_groups;
+    private List<String> spammer_message;
 
     private static Config config;
 
@@ -86,4 +91,30 @@ public class Config {
     public void setLastAlmub(String last_almub) {
         this.last_almub = last_almub;
     }
+
+
+    public List<String> getSpammer_accounts() {
+        return spammer_accounts;
+    }
+
+    public void setSpammer_accounts(List<String> spammer_accounts) {
+        this.spammer_accounts = spammer_accounts;
+    }
+
+    public List<String> getSpammer_groups() {
+        return spammer_groups;
+    }
+
+    public void setSpammer_groups(List<String> spammer_groups) {
+        this.spammer_groups = spammer_groups;
+    }
+
+    public List<String> getSpammer_message() {
+        return spammer_message;
+    }
+
+    public void setSpammer_message(List<String> spammer_message) {
+        this.spammer_message = spammer_message;
+    }
+
 }

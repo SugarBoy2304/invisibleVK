@@ -7,14 +7,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
-import myvk.PullUp;
+import myvk.Main;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AccountController implements Initializable {
 
-    private PullUp pullUp;
+    private Main pullUp;
 
     @FXML
     private GridPane grid;
@@ -28,7 +28,7 @@ public class AccountController implements Initializable {
         return this.grid;
     }
 
-    public void setPullUp(PullUp pullUp) {
+    public void setPullUp(Main pullUp) {
         this.pullUp = pullUp;
 
         // Добавление в таблицу данных из наблюдаемого списка

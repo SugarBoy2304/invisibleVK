@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="InvisibleVK">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="root">
+      <element id="archive" name="InvisibleVK.jar">
+        <element id="module-output" name="InvisibleVK" />
+      </element>
+      <element id="library" level="project" name="com.eclipsesource.minimal-json:minimal-json:0.9.4" />
+      <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.6.4" />
+      <element id="library" level="project" name="com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.3" />
+      <element id="library" level="project" name="commons-io-2.5" />
+      <element id="library" level="project" name="com.vk.api:sdk:0.5.9" />
+      <element id="library" level="project" name="org.fusesource.jansi:jansi:1.16" />
+    </root>
+  </artifact>
+</component>

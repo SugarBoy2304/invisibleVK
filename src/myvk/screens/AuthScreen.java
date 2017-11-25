@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.screens.logic.IScreen;
 import myvk.screens.logic.IScreenManager;
 import myvk.utils.exception.MyException;
@@ -17,7 +17,7 @@ public class AuthScreen implements IScreen {
     public IScreen init(IScreenManager manager) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(PullUp.class.getResource("view/fxml/AuthView.fxml"));
+            loader.setLocation(Main.class.getResource("view/fxml/AuthView.fxml"));
             Parent p = loader.load();
 
             // Отображаем сцену, содержащую корневой макет.
@@ -27,7 +27,7 @@ public class AuthScreen implements IScreen {
             manager.getStage().show();
 
             AuthController controller = loader.getController();
-            controller.setPullUp(PullUp.getApp());
+            controller.setPullUp(Main.getApp());
             return this;
         } catch (IOException ex) {
             MyException.generate().setException(ex).setMsg("Ошибка загрузки AuthScreen:").setLevelError(Alert.AlertType.ERROR).setError("Подробнее:").show(true);

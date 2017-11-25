@@ -10,10 +10,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.auth.Utils;
 import myvk.screens.AuthScreen;
 import myvk.screens.CopyScreen;
+import myvk.screens.SpammerScreen;
 import myvk.utils.*;
 import myvk.utils.exception.MyException;
 
@@ -36,7 +37,7 @@ public class MainControllers implements Initializable {
     private Button startFind;
 
     @FXML
-    private Label exit_name;
+    private MenuItem exit_name;
 
     /** Информация о товаре **/
 
@@ -115,8 +116,8 @@ public class MainControllers implements Initializable {
             return;
         }
 
-        int market = 0;
-        int albumId = 0;
+        int market;
+        int albumId;
 
         try {
 
@@ -218,7 +219,7 @@ public class MainControllers implements Initializable {
             Config.a().save();
 
             new CopyScreen(items).
-                    init(PullUp.getApp().manager())
+                    init(Main.getApp().manager())
                     .setSettings(
                             priceController.getText(),
                             changePrice.isSelected(),
@@ -232,10 +233,15 @@ public class MainControllers implements Initializable {
     }
 
     @FXML
+    public void openSpammer() {
+        new SpammerScreen().init(Main.getApp().manager());
+    }
+
+    @FXML
     public void quitUser() throws Exception {
         Config.a().setToken("");
         Config.a().save();
-        PullUp.getApp().manager().set(new AuthScreen().init(PullUp.getApp().manager()));
+        Main.getApp().manager().set(new AuthScreen().init(Main.getApp().manager()));
     }
 
 }

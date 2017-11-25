@@ -2,7 +2,6 @@ package myvk.view.controllers;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.vk.api.sdk.client.ApiRequest;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.market.responses.AddResponse;
@@ -19,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.screens.CopyScreen;
 import myvk.utils.Log;
 import myvk.utils.MyItem;
@@ -154,9 +153,9 @@ public class CopyControllers implements Initializable {
                 if (q == 0) {
                     Image img = new Image(item.getNormalImage().get(q));
                     double sizeImg = img.getWidth() > img.getHeight() ? img.getHeight() : img.getWidth();
-                    server = PullUp.getApp().api().photos().getMarketUploadServer(PullUp.getApp().user(), groupId).mainPhoto(true).cropY(0).cropX(0).cropWidth((int) sizeImg).execute();
+                    server = Main.getApp().api().photos().getMarketUploadServer(Main.getApp().user(), groupId).mainPhoto(true).cropY(0).cropX(0).cropWidth((int) sizeImg).execute();
                 } else {
-                    server = PullUp.getApp().api().photos().getMarketUploadServer(PullUp.getApp().user(), groupId).mainPhoto(false).execute();
+                    server = Main.getApp().api().photos().getMarketUploadServer(Main.getApp().user(), groupId).mainPhoto(false).execute();
                 }
 
                 /** Отправка на сервер фотографии **/
@@ -168,7 +167,7 @@ public class CopyControllers implements Initializable {
                 Thread.sleep(350L);
 
                 /** Подтверждаем загрузку фотографии **/
-                PhotosSaveMarketPhotoQuery saveQuery = PullUp.getApp().api().photos().saveMarketPhoto(PullUp.getApp().user(),
+                PhotosSaveMarketPhotoQuery saveQuery = Main.getApp().api().photos().saveMarketPhoto(Main.getApp().user(),
                         object.get("photo").toString().substring(1, object.get("photo").toString().length() - 1).replace("\\", ""),
                         object.get("server").getAsInt(),
                         object.get("hash").getAsString());
@@ -199,8 +198,8 @@ public class CopyControllers implements Initializable {
             String description = myDescription ? item.getDescription(schemDescription, price) : item.getDescription();
 
             /** Генерируем запрос добавления товара**/
-            MarketAddQuery query = PullUp.getApp().api().market().
-                    add(PullUp.getApp().user(),
+            MarketAddQuery query = Main.getApp().api().market().
+                    add(Main.getApp().user(),
                             // ID Сообщества
                             -groupId,
                             // Имя товара
@@ -222,7 +221,7 @@ public class CopyControllers implements Initializable {
             Thread.sleep(350L);
 
             /** Переопредляем товар в альбом **/
-            PullUp.getApp().api().market().addToAlbum(PullUp.getApp().user(), -groupId, response.getMarketItemId(), albumId).execute();
+            Main.getApp().api().market().addToAlbum(Main.getApp().user(), -groupId, response.getMarketItemId(), albumId).execute();
 
             /** Логгируем***/
             Log.send("SHOP", String.format("Item %s successful added", item.getTitle().getValue()));

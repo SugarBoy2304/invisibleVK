@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.screens.logic.IScreen;
 import myvk.screens.logic.IScreenManager;
 import myvk.utils.MyItem;
@@ -29,7 +29,7 @@ public class CopyScreen implements IScreen {
     public CopyScreen init(IScreenManager manager) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(PullUp.class.getResource("view/fxml/ScreenView.fxml"));
+            loader.setLocation(Main.class.getResource("view/fxml/ScreenView.fxml"));
             Parent p = loader.load();
 
             // Отображаем сцену, содержащую корневой макет.

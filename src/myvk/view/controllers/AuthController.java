@@ -3,7 +3,7 @@ package myvk.view.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.screens.LoginScreen;
 
 import java.net.URL;
@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 
 public class AuthController implements Initializable {
 
-    private PullUp pullUp;
+    private Main pullUp;
 
     @FXML
     private Button loginButton;
@@ -19,7 +19,7 @@ public class AuthController implements Initializable {
     @FXML
     private Button regButton;
 
-    public void setPullUp(PullUp pullUp) {
+    public void setPullUp(Main pullUp) {
         this.pullUp = pullUp;
     }
 
@@ -30,7 +30,7 @@ public class AuthController implements Initializable {
 
     @FXML
     private void handleButtonLogin() throws InterruptedException {
-        new LoginScreen().init(PullUp.getApp().manager());
+        new LoginScreen().init(Main.getApp().manager());
     }
 
     @FXML

@@ -8,7 +8,7 @@ import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.groups.GroupFull;
 import com.vk.api.sdk.objects.market.MarketItem;
 import com.vk.api.sdk.queries.market.MarketGetQuery;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.utils.exception.MyException;
 
 import java.util.*;
@@ -21,7 +21,7 @@ public class ShopParser {
     public ShopParser(int id) {
         this.id = id;
         try {
-            this.group = PullUp.getApp().api().groups().getById(PullUp.getApp().user()).groupId(id + "").execute().get(0);
+            this.group = Main.getApp().api().groups().getById(Main.getApp().user()).groupId(id + "").execute().get(0);
         } catch (ApiException e) {
             MyException.generate().setException(e).setMsg("Ошибка в загрузке группы").show(true);
         } catch (ClientException e) {
@@ -49,7 +49,7 @@ public class ShopParser {
 
                 /** Генерируем запрос к вк апи**/
                 // @id - айди группы, offset - смещени (получать можно лишь 100 товаров за один запрос)
-                MarketGetQuery query = PullUp.getApp().api().market().get(PullUp.getApp().user(), -id).offset(offset * 100).albumId(album);
+                MarketGetQuery query = Main.getApp().api().market().get(Main.getApp().user(), -id).offset(offset * 100).albumId(album);
                 Map<String, Integer> extended = new HashMap<>();
                 extended.put("photos", 1); // Добавляем кастомный параметр photos, чтобы в запросе получить фото
                 query.unsafeParam("extended", extended);

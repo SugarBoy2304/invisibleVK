@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myvk.Browser;
-import myvk.PullUp;
+import myvk.Main;
 import myvk.screens.logic.IScreen;
 import myvk.screens.logic.IScreenManager;
 
@@ -20,7 +20,7 @@ public class LoginScreen implements IScreen {
         }
 
         // Отображаем сцену, содержащую корневой макет.
-        Scene scene = new Scene(new Browser(PullUp.getApp(), Browser.Move.LOGIN), 750, 500, Color.web("#666970"));
+        Scene scene = new Scene(new Browser(Main.getApp(), Browser.Move.LOGIN), 750, 500, Color.web("#666970"));
 
         browserView = new Stage();
         browserView.setTitle("Авторизация");
